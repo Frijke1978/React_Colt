@@ -91,16 +91,14 @@ class NewPaletteForm extends Component {
   }
 
   componentDidMount() {
-    ValidatorForm.addValidationRule("isColorNameUnique", value => 
+    ValidatorForm.addValidationRule("isColorNameUnique", value =>
       this.state.colors.every(
         ({ name }) => name.toLowerCase() !== value.toLowerCase()
       )
     );
-    ValidatorForm.addValidationRule("isColorUnique", value => 
-    this.state.colors.every(
-      ({ name }) => (({ color }) => color !== this.state.currentColor)
-    )
-  );
+    ValidatorForm.addValidationRule("isColorUnique", value =>
+      this.state.colors.every(({ color }) => color !== this.state.currentColor)
+    );
   }
 
   handleDrawerOpen = () => {
@@ -182,18 +180,22 @@ class NewPaletteForm extends Component {
             color={this.state.currentColor}
             onChangeComplete={this.updateCurrentColor}
           />
-          <ValidatorForm onSubmit={this.addNewColor} ref="form">
-            <TextValidator 
-              value={this.state.newName} 
-              onChange={this.handleChange} 
+           <ValidatorForm onSubmit={this.addNewColor} ref='form'>
+            <TextValidator
+              value={this.state.newName}
+              onChange={this.handleChange}
               validators={["required", "isColorNameUnique", "isColorUnique"]}
-              errorMessages={["this field is required", "ColorName must be unique", "Color already used!"]}
+              errorMessages={[
+                "Enter a color name",
+                "Color name must be unique",
+                "Color already used!"
+              ]}
             />
-            <Button 
-              variant='contained' 
+            <Button
+              variant='contained'
               type='submit'
-              color='primary' 
-              style={{backgroundColor: this.state.currentColor}}
+              color='primary'
+              style={{ backgroundColor: this.state.currentColor }}
             >
               Add Color
             </Button>
