@@ -1,12 +1,28 @@
 import sizes from "./sizes";
+import bg from "./bg.svg";
 
 export default {
+    "@global": {
+        ".fade-exit": {
+            opacity: 1
+        },
+        ".fade-exit-active": {
+            opacity: 0,
+            transition: "opacity 500ms ease-out"
+        }
+    },
     root: {
-        backgroundColor: "blue",
         height: "100vh",
         display: "flex",
         alignItems: "flex-start",
-        justifyContent: "center"
+        justifyContent: "center",
+        /* background by SVGBackgrounds.com */
+        backgroundColor: "#207aaa",
+        backgroundImage: `url(${bg})`,
+        overflow: "scroll"
+    },
+    heading: {
+        fontsize: "2rem"
     },
     container: {
         width: "50%",
@@ -42,7 +58,7 @@ export default {
         },
         [sizes.down("xs")]: {
             gridTemplateColumns: "repeat(1, 100%)",
-            gridGap: "1rem"
+            gridGap: "1.4rem"
         }
     }
 };
