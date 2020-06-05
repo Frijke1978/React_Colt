@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Button from "@material-ui/core/Button";
 import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
 import { ChromePicker } from "react-color";
-import { withStyles, StylesProvider } from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/core/styles";
 import styles from "./styles/ColorPickerFormStyles";
 
 
@@ -50,7 +50,7 @@ class ColorPickerForm extends Component {
                     onChangeComplete={this.updateCurrentColor}
                     className={classes.picker}
                 />
-                <ValidatorForm onSubmit={this.handleSubmit} ref='form'>
+                <ValidatorForm onSubmit={this.handleSubmit} ref='form' instantValidate={false}>
                     <TextValidator
                         value={newColorName}
                         className={classes.colorNameInput}
