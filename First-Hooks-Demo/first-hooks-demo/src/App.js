@@ -7,17 +7,19 @@ import Toggler from "./Toggler";
 import SimpleFormClass from './SimpleFormClass';
 import SimpleFormInputHook from "./SimpleFormInputHook";
 import Clicker from "./Clicker";
+import SWMovies from "./SWMovies";
 
 function App() {
   return (
     <div className="App">
-     <CounterClass />
+    <SWMovies />
+     {/* <CounterClass />
      <CounterHooks />
      <Toggler />
      <SimpleFormClass />
      <SimpleFormHooks />
      <SimpleFormInputHook />
-     <Clicker />
+     <Clicker /> */}
     </div>
   );
 }
