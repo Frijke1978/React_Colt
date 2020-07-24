@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import useTodoState from "./hooks/useTodoState";
 import TodoList from "./TodoList";
 import TodoForm from "./TodoForm";
