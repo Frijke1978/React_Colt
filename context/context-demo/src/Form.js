@@ -15,6 +15,7 @@ import Select from "@material-ui/core/Select";
 import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles/FormStyles";
 import { LanguageContext } from "./contexts/LanguageContext";
+
 const words = {
   english: {
     signIn: "Sign In",
@@ -35,6 +36,7 @@ const words = {
     remember: "Recuérdame"
   }
 };
+
 class Form extends Component {
   static contextType = LanguageContext;
   render() {
@@ -81,4 +83,5 @@ class Form extends Component {
     );
   }
 }
+
 export default withStyles(styles)(Form);
