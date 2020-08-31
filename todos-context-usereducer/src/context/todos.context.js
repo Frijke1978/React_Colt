@@ -1,6 +1,3 @@
-// todos
-// all methods to interact with todos
-
 import React, {createContext} from "react";
 import useTodoState from "../hooks/useTodoState";
 const defaultTodos = [
@@ -9,7 +6,7 @@ const defaultTodos = [
 ];
 export const TodosContext = createContext();
 
-function TodosProvider(props) {
+export function TodosProvider(props) {
     const todoStuff  = useTodoState(defaultTodos);
     return (
         <TodosContext.Provider value={todoStuff}>
