@@ -1,13 +1,14 @@
-const { TodosContext } = require("../context/todos.context")
-const { unstable_createMuiStrictModeTheme } = require("@material-ui/core")
+// const { TodosContext } = require("../context/todos.context")
+// const { unstable_createMuiStrictModeTheme } = require("@material-ui/core")
 
 import uuid from "uuid/v4"
 const reducer = ( state, action) => {
-    switch(action, type) {
+    switch(action.type) {
         case "ADD":
             return [...state, { id: uuid(), task: action.task, completed: false}]
         case "REMOVE":
-            return state.filter( todo => todo.id !== action.id )
+            return state.filter( todo => todo.id !== action.id 
+            )
         case "TOGGLE":
             return state.map(todo =>
                 todo.id === action.id ? { ...todo, completed: !todo.completed } : todo
